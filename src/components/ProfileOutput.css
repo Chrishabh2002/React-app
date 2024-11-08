@@ -1,0 +1,42 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+
+.card {
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(10px);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item {
+  border: none;
+  background-color: #f8f9fa;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+.card-title {
+  color: #007bff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn-info {
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border-radius: 50px;
+}
+
+.btn-info:hover {
+  background-color: #17a2b8;
+  transition: background-color 0.3s ease;
+}

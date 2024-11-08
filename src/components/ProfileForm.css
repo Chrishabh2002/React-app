@@ -1,0 +1,27 @@
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  }
+  
+  .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  }
+  
+  h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .btn-primary {
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
