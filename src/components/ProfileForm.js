@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import 'animate.css'; 
+import { API_URL } from '../config';  // Import the API URL
 
 const ProfileForm = () => {
   const [formData, setFormData] = useState({
@@ -22,14 +23,26 @@ const ProfileForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:8000/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
-    if (response.ok) {
-      const data = await response.json();
-      navigate('/profile-output', { state: { formData: data } });
+    
+    try {
+      const response = await fetch(`${API_URL}/submit`, {  // Use the API_URL from config
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        navigate('/profile-output', { state: { formData: data } });
+      } else {
+        // Handle non-OK response
+        console.error('Error:', response.statusText);
+        alert('Failed to submit the form.');
+      }
+    } catch (error) {
+      // Handle network or other errors
+      console.error('Error:', error);
+      alert('An error occurred while submitting the form.');
     }
   };
 
